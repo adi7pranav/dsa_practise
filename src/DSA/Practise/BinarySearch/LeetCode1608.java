@@ -10,11 +10,9 @@ public class LeetCode1608 {
      Return x if the array is special, otherwise, return -1. It can be proven that if nums is special, the value for x is unique.
      */
     static int checkSpecial(int x, int[] nums) {
-        int count = 0;
-        for (int i : nums) {
-            if (i >= x) count++;
-        }
-        return count;
+        return (int) Arrays.stream(nums)
+                .filter(i -> i >= x)
+                .count();
 
     }
 
